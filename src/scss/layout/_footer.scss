@@ -1,0 +1,13 @@
+//Importamos las variables
+@use "../base/variables" as Variables;
+@use "../base/mixins" as Mixins;
+
+.site-footer{
+    background-color: Variables.$Rosa;
+    padding: 1rem;
+    p{
+        margin: 0;
+        text-align: center;
+        color: Variables.$Blanco;
+    }
+}

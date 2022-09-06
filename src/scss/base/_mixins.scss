@@ -1,0 +1,55 @@
+/**
+* Los Mixins son fracmentos de codigo css que podemos 
+* estar reutilizando para mayor facilidad
+@use "variables" as Variables;
+
+@mixin heading { //Definimos un mixin
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    color: black;
+    letter-spacing: 1px;
+}
+
+//En caso de que no resiva parametros usaremos ":ValorPredeterminado"
+@mixin headingArg($color :blue) { //Definimos un mixin con argumentos
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    color: $color;
+    letter-spacing: 1px;
+}
+
+*/
+
+@use "variables" as Variables;
+
+//-----------Creando un Mixins para "Media Queries"-----------
+
+@mixin Telefono {
+    @media (min-width: 480px) {
+        @content; //Remplaza lo que este entre las llaves al momento de usar
+    }
+}
+
+@mixin Tablet {
+    @media (min-width: 768px) {
+        @content; //Remplaza lo que este entre las llaves al momento de usar
+    }
+}
+
+@mixin Desktop {
+    @media (min-width: 992px) {
+        @content; //Remplaza lo que este entre las llaves al momento de usar
+    }
+}
+
+@mixin grid($Columnas, $Espacio) {
+    display: grid;
+    grid-template-columns: repeat($Columnas, 1fr);
+    gap: $Espacio;
+}
+
+@mixin R-lista {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}

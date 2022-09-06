@@ -1,0 +1,59 @@
+//Importamos las variables
+@use "../base/variables" as Variables;
+@use "../base/mixins" as Mixins;
+
+//Primer uso de la anidacion en scss
+//Se recomienda no anidar mas de tres niveles
+.header{
+    background-color: Variables.$Verde_Azul;
+    @include Mixins.Tablet {
+        &.fijo{
+            left: 0;
+            top: 0;
+            position: fixed;
+            width: 100%;
+            box-shadow: 0.1rem 0.2rem 0.3rem #666;
+        }
+    }
+    //Aninados el h1 y realizamos cambios
+    h1{
+        color: Variables.$Blanco;
+        text-align: center;
+        @include Mixins.Tablet {
+            margin: 0;
+        }
+    }
+    .contenido-header{
+        padding: 2rem;
+        @include Mixins.Tablet {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}
+
+.navegacion-principal{
+    
+    @include Mixins.Tablet {
+        display: flex;
+        gap: 2rem;
+    }
+
+    a{
+        color: Variables.$Blanco;
+        font-size: 2.4rem;
+        display: block;
+        text-align: center;
+        margin-bottom: 1rem;
+
+        @include Mixins.Tablet {
+            margin: 0;
+        }
+
+        //Usando "hover" ademas caracter para eliminar espacios
+        &:hover{
+            color: Variables.$Amarillo;
+        }
+    }
+}

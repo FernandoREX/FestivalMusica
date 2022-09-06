@@ -1,0 +1,64 @@
+//Importamos las variables
+@use "../base/variables" as Variables;
+@use "../base/mixins" as Mixins;
+
+.boletos{
+    padding: 5rem 0;
+    h3{
+        text-align: center;
+        color: Variables.$Blanco;
+        margin-bottom: 3rem
+    }
+}
+
+.contenedor-boletos{
+    @include Mixins.Tablet {
+        @include Mixins.grid(2,5rem);
+    }
+}
+
+.pase{
+
+    .NombreP{
+        text-align: center;
+        color: Variables.$Blanco;
+        font-size: 3rem;
+    }
+
+    &-header,
+    &-footer{
+        p{
+            text-align: center;
+            color: Variables.$Blanco;
+            margin: 0;
+        }
+    }
+
+    color: Variables.$Negro;
+    &-header{
+        background-color: Variables.$Rosa;
+        p{
+            text-transform: uppercase;
+            font-size: 1.6rem;
+        }
+    }
+    &-body{
+        background-color: Variables.$Blanco;
+        ul{
+            @include Mixins.R-lista;
+            li,
+            :nth-child(odd){
+                background-color: Variables.$Blanco;
+                padding: 1rem;
+                border-bottom: 1px solid #e1e1e1;
+            }
+        }
+    }
+    &-footer{
+        background-color: Variables.$Morado;
+        p{
+            font-size: 2.6rem;
+            font-weight: 700;
+        }
+    }
+}

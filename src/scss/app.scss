@@ -1,0 +1,10 @@
+//Forma de importar archivos antigua (Aun en funcionamiento)
+//@import "contenido/contenido";
+
+//Forma de importar archivos moderna
+// Se debe importar en todos los archivos que usen los archivos de "base"
+@use "base"; //Compila el archivo
+@use "layout"
+
+
+

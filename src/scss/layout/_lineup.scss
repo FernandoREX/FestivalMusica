@@ -1,0 +1,78 @@
+//Importamos las variables
+@use "../base/variables" as Variables;
+@use "../base/mixins" as Mixins;
+
+.Lineup{
+    background-color: Variables.$Rosa;
+    padding: 5rem 0;
+
+    h3, p{
+        text-align: center;
+        color: Variables.$Blanco;
+    }
+    .dia{
+        text-transform: uppercase;
+        margin: 5rem 0;
+    }
+}
+
+.escenarios-contenedor{
+    @include Mixins.Tablet {
+        @include Mixins.grid(2, 5rem);
+    }
+    p{
+        color: Variables.$Negro;
+    }
+    .escenario{
+        padding-top: 2rem;
+        p{
+            &::after{
+                content: "";
+                display: block;
+                width: 20rem;
+                height: 10rem;
+                background-size: 15rem;
+                background-repeat: no-repeat;
+                background-position: center center;
+                margin: 2rem auto 0 auto;
+            }
+        }
+    }
+}
+
+.edm .nombre-ecsenario:after{
+    background-image: url(../img/icono_edm.png);
+}
+
+.rock .nombre-ecsenario:after{
+    background-image: url(../img/icono_rock.png);
+}
+
+.calendario{
+    @include Mixins.R-lista;
+    li{
+        padding: 2.5rem;
+        font-weight: 700;
+
+        span{
+            font-weight: 400;
+        }
+    }
+}
+
+.bg-verde{
+    background-color: Variables.$Verde_Azul;
+    //Ponemos Colores distintos a los "li" impares
+    li:nth-child(odd){
+        //Usamos una herramienta de sass "darken(color, obscuro%)"
+        background-color: darken(Variables.$Verde_Azul, 15%);
+    }
+}
+
+.bg-amarillo{
+    background-color: Variables.$Amarillo;
+    li:nth-child(odd){
+        //Usamos una herramienta de sass "darken(color, obscuro%)"
+        background-color: darken(Variables.$Amarillo, 10%);
+    }
+}

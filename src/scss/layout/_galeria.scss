@@ -1,0 +1,58 @@
+//Importamos las variables
+@use "../base/variables" as Variables;
+@use "../base/mixins" as Mixins;
+
+.galeria{
+    padding: 5rem 0;
+    h3{
+        text-align: center;
+    }
+}
+
+.galeria__imagenes{
+    @include Mixins.R-lista;
+    @include Mixins.grid(2, 2rem);
+    @include Mixins.Telefono{
+        @include Mixins.grid(3, 2rem);
+    }
+    @include Mixins.Tablet{
+        @include Mixins.grid(4, 2rem);
+    }
+    @include Mixins.Desktop{
+        @include Mixins.grid(6, 2rem);
+    }
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    place-items: center;
+    background-color: rgba(0,0,0,0.5);
+    picture{
+        display: block;
+        max-width: 100rem;
+    }
+}
+
+.btn-cerrar{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: Variables.$Blanco;
+    color: Variables.$Negro;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+
+    &:hover{
+        cursor: pointer;
+    }
+}

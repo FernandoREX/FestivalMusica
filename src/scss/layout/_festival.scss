@@ -1,0 +1,28 @@
+@use "../base/variables" as Variables;
+@use "../base/mixins" as Mixins;
+
+.sobre-festival{
+    padding: 5rem 0;
+    @include Mixins.Tablet {
+        @include Mixins.grid(2, 5rem);
+    }
+}
+
+.contenido-festival{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 5rem;
+
+    @include Mixins.Tablet {
+        margin-top: 0;
+    }
+
+    h2{
+        margin-bottom: 2rem;
+    }
+    .fecha{
+        color: Variables.$Rosa;
+        font-weight: 700;
+    }
+}

@@ -1,0 +1,47 @@
+@use "../base/variables" as Variables;
+@use "../base/mixins" as Mixins;
+
+//De esta forma ensimamos componentes
+.video{
+    position: relative;
+    max-height: 70rem;
+    min-height: 50rem;
+    overflow: hidden;
+
+    .overlay{
+        background: rgb(120,0,130);
+        background: linear-gradient(349deg, rgba(120,0,130,0.7343312324929971) 0%, rgba(0,212,255,0.30015756302521013) 100%);
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    video {
+        width: auto;
+        display: block;
+        @include Mixins.Tablet {
+            width: 100%;
+        }
+    }
+}
+
+.contenido-video{
+    z-index: 2;
+    h2{
+        color: Variables.$Blanco;
+        font-size: 7rem;
+        margin: 0;
+    }
+
+    p{
+        background-color: Variables.$Rosa;
+        color: Variables.$Blanco;
+        display: inline-block; //Solo tima el espacio que requier
+        padding: 1rem 2rem;
+        font-weight: 700;
+        margin: 0;
+    }
+}
